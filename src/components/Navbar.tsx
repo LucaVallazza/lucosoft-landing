@@ -17,7 +17,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen, scrollToSection }: Navb
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"
           >
-            L&C Soft
+            Lu&Co Soft
           </motion.div>
           
           {/* Desktop Menu */}
