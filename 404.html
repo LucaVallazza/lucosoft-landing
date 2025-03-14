@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada | Lu&Co Soft</title>
+  <style>
+    /* Estilos integrados para mantener todo en un archivo */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(to bottom right, #0f0f1a, #1e1a3c);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .container {
+      max-width: 500px;
+      padding: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #60a5fa, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    p {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(to right, #3b82f6, #8b5cf6);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+    }
+    
+    /* Partículas decorativas */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(139, 92, 246, 0.2);
+      animation: float 8s infinite ease-in-out;
+    }
+    
+    .particle:nth-child(1) {
+      width: 100px;
+      height: 100px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+      opacity: 0.2;
+      filter: blur(20px);
+    }
+    
+    .particle:nth-child(2) {
+      width: 150px;
+      height: 150px;
+      top: 60%;
+      left: 80%;
+      animation-delay: 2s;
+      opacity: 0.15;
+      filter: blur(25px);
+      background-color: rgba(96, 165, 250, 0.2);
+    }
+    
+    .particle:nth-child(3) {
+      width: 80px;
+      height: 80px;
+      top: 80%;
+      left: 30%;
+      animation-delay: 4s;
+      opacity: 0.2;
+      filter: blur(15px);
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(-20px) translateX(10px);
+      }
+    }
+    
+    /* Spinner animado para mostrar durante la redirección */
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script>
+    // Función que se ejecutará después de mostrar la página por un momento
+    window.onload = function() {
+      setTimeout(function() {
+        // Toma la ruta actual y redirecciona a la página principal
+        const path = window.location.pathname;
+        const redirectURL = `/?path=${path.substring(1)}`;
+        window.location.replace(redirectURL);
+      }, 100); // Espera 2.5 segundos antes de redireccionar
+    };
+  </script>
+</head>
+<body>
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  
+  <div class="container">
+    <h1>404 - Página no encontrada</h1>
+    <p>La página que estás buscando no existe o ha sido movida.</p>
+    <p>Serás redirigido a la página principal en unos momentos <span class="spinner"></span></p>
+    <a href="/" class="btn">Ir al inicio ahora</a>
+  </div>
+</body>
+</html>
