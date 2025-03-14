@@ -4,7 +4,8 @@ import HomePage from './pages/HomePage';
 
 const App = () => {
   return (
-    <Router basename='/lucosoft-landing/'>
+    // <Router basename='/lucosoft-landing/'>
+    <Router >
       <Routes>
         <Route path="/" element={<HomePage />} />
         {/* Puedes agregar más rutas en el futuro */}
