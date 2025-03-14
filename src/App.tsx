@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import HomePage from './pages/HomePage';
+import FreeWebPage from './pages/FreeWebPage';
 import WelcomePopup from './components/WelcomePopup';
 
 const App = () => {
@@ -58,7 +59,8 @@ const App = () => {
       {showWelcomePopup && <WelcomePopup onClose={handleClosePopup} />}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* Puedes agregar más rutas en el futuro */}
+        <Route path="/pagina-web-gratis" element={<FreeWebPage />} />
+        {/* Redireccionar cualquier otra ruta a la página principal */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
