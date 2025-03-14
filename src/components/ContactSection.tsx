@@ -58,6 +58,17 @@ const ContactSection = () => {
               </div>
               
               <div>
+                <label htmlFor="email" className="block text-gray-300 mb-2">¿Quién te envio la pagina? <span className='italic text-sm'>(Opcional)</span></label>
+                <input
+                  type="text"
+                  id="referal"
+                  name="referal"
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  placeholder="Nombre del vendedor"
+                />
+              </div>
+              
+              <div>
                 <label htmlFor="message" className="block text-gray-300 mb-2">Mensaje</label>
                 <textarea
                   id="message"
