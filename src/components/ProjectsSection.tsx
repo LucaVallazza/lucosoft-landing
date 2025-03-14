@@ -45,11 +45,11 @@ const ProjectsSection = () => {
   };
 
   // Estilos personalizados para el carrusel
-  const customCarouselStyles = {
-    height: "100%",
-    display: "flex",
-    alignItems: "stretch"
-  };
+  // const customCarouselStyles = {
+  //   height: "100%",
+  //   display: "flex",
+  //   alignItems: "stretch"
+  // };
 
   return (
     <section id="proyectos" className="py-20 px-4">
@@ -76,7 +76,7 @@ const ProjectsSection = () => {
           transitionDuration={300}
           containerClass="pb-12"
           itemClass="h-full px-4"
-          style={customCarouselStyles}
+          // style={customCarouselStyles}
           customDot={<CustomDot />}
           customRightArrow={<CustomRightArrow />}
           customLeftArrow={<CustomLeftArrow />}
