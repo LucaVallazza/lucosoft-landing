@@ -1,6 +1,6 @@
-import { motion, useAnimation, AnimatePresence, useMotionValue } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 interface HeroProps {
   scrollToSection: (id: string) => void;
@@ -90,7 +90,7 @@ const FloatingParticle = ({
 };
 
 // Componente para palabras destacadas con efectos premium - modificado para tener rebote al salir del hover
-const PremiumWord = ({ text, delay = 0, underlineDelay = 0 }: { 
+const PremiumWord = ({ text, underlineDelay = 0 }: { 
   text: string, 
   delay?: number, 
   underlineDelay?: number
@@ -141,12 +141,10 @@ const PremiumWord = ({ text, delay = 0, underlineDelay = 0 }: {
 
 const Hero = ({ scrollToSection }: HeroProps) => {
   // Estados para animaciones especiales
-  const [isLoaded, setIsLoaded] = useState(false);
   const logoControls = useAnimation();
   
   // Animar al cargar
   useEffect(() => {
-    setIsLoaded(true);
     const sequence = async () => {
       await logoControls.start({ 
         scale: [0.8, 1.1, 1],
