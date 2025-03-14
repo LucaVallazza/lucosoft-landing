@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import HomePage from './pages/HomePage';
 import WelcomePopup from './components/WelcomePopup';
@@ -59,6 +59,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         {/* Puedes agregar más rutas en el futuro */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
