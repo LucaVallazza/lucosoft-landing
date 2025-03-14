@@ -1,0 +1,83 @@
+/* Estilos para el contenedor del burst de oferta */
+.offer-burst-container {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  z-index: 9999;
+  overflow: visible !important;
+  pointer-events: none;
+}
+
+/* Estilos para crear una estrella/burst con muchas puntas */
+.offer-burst {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+/* Crear el fondo principal con forma de estrella usando pseudo-elementos */
+.offer-burst:before, 
+.offer-burst:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ec4899, #dc2626);
+  border-radius: 5px;
+  z-index: -1;
+}
+
+/* Rotamos uno de los elementos para crear una estrella de 8 puntas */
+.offer-burst:before {
+  transform: rotate(22.5deg);
+}
+
+.offer-burst:after {
+  transform: rotate(45deg);
+}
+
+/* Círculo interior para colocar el texto */
+.offer-burst-inner {
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(135deg, #ec4899, #dc2626);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+.offer-burst-text {
+  color: white;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Forzar visible overflow en todos los contenedores del carrusel */
+.react-multi-carousel-list,
+.react-multi-carousel-track,
+.react-multi-carousel-item,
+#servicios * {
+  overflow: visible !important;
+}
+
+/* Fix específico para react-multi-carousel */
+.react-multi-carousel-item {
+  transform-style: preserve-3d;
+}
+
+/* Esto fuerza al contenedor a crear un nuevo contexto de apilamiento */
+.offer-card-container {
+  position: relative;
+  transform: translateZ(0);
+  isolation: isolate;
+}

@@ -247,11 +247,11 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <PremiumWord 
-              text="Soluciones" 
+              text="Soluciones " 
               delay={0.6} 
               underlineDelay={0.9} 
             />
-            <span className="mx-2">a medida</span>
+            <span className="mx-2">{" "}a medida</span>
           </motion.div>
           
           {/* Segunda línea: "para tu negocio" */}
@@ -277,7 +277,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 2.1 }}
         >
-          Potencia tu presencia digital con soluciones profesionales
+          Potencia tu presencia digital con soluciones profesionales.
         </motion.p>
         
         {/* Botones de acción */}
