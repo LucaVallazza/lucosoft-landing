@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { CheckCircle, ArrowRight, Layout, Users, SearchCheck, Clock, Globe, TrendingUp, AlertCircle } from 'lucide-react';
+import { CheckCircle, ArrowRight, Layout, Users, SearchCheck, Clock, Globe, TrendingUp } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useEffect } from 'react';
