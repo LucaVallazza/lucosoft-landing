@@ -9,7 +9,7 @@ const ProjectsSection = () => {
       title: "Urban House",
       description: "Página web para una inmobiliaria con un buscador de propiedades incorporado. Diseño moderno y simple.",
       image: "projects/urban-house.jpg",
-      url: "https://lucavallazza.github.io/urban-house-landing/"
+      url: "https://urban-house-landing.vercel.app/"
     },
     {
       title: "Ferrero Arquitectura",

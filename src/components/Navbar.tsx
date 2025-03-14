@@ -17,13 +17,13 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen, scrollToSection }: Navb
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"
           >
-            Lu&Co Soft
+            L&C Soft
           </motion.div>
           
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {['Inicio', 'Proyectos', 'Servicios', 'Nosotros', 'Contacto'].map((item) => (
+              {['Inicio', 'Servicios', 'Proyectos', 'Nosotros', 'Contacto'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -74,8 +74,8 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen, scrollToSection }: Navb
         <div className="px-2 pt-2 pb-3 space-y-1 backdrop-blur-lg border-t border-white/10">
           {[
             { name: 'Inicio', icon: <Home className="w-5 h-5" /> },
-            { name: 'Proyectos', icon: <Grid className="w-5 h-5" /> },
             { name: 'Servicios', icon: <PenTool className="w-5 h-5" /> },
+            { name: 'Proyectos', icon: <Grid className="w-5 h-5" /> },
             { name: 'Nosotros', icon: <Users className="w-5 h-5" /> },
             { name: 'Contacto', icon: <Mail className="w-5 h-5" /> }
           ].map((item) => (
