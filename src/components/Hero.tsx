@@ -247,7 +247,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <PremiumWord 
-              text="Soluciones " 
+              text="Soluciones" 
               delay={0.6} 
               underlineDelay={0.9} 
             />
@@ -261,7 +261,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.4 }}
           >
-            <span>para tu </span>
+            <span>{" "} para tu </span>
             <PremiumWord 
               text="Negocio" 
               delay={1.4}
@@ -272,12 +272,12 @@ const Hero = ({ scrollToSection }: HeroProps) => {
         
         {/* Párrafo descriptivo */}
         <motion.p 
-          className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-xl mx-auto"
+          className="text-sm sm:text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 2.1 }}
         >
-          Potencia tu presencia digital con soluciones profesionales.
+          Desarrollamos <span className="text-blue-300">aplicaciones web</span>, <span className="text-purple-300">software a medida</span> y <span className="text-pink-300">páginas web de alto impacto</span> que facilitan tus tareas diarias. Desde <span className="font-medium text-blue-300">PyMEs hasta grandes corporaciones</span>, contamos con planes personalizados.
         </motion.p>
         
         {/* Botones de acción */}
@@ -289,7 +289,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
         >
           <motion.a 
             href="#contacto"
-            className="px-6 md:px-8 py-2 md:py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-white text-sm md:text-base font-medium hover:opacity-90 transition-all flex items-center gap-2 hover:shadow-md hover:shadow-purple-500/20"
+            className="px-6 md:px-8 py-2 md:py-3  bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-white text-sm md:text-base font-medium hover:opacity-90 transition-all flex items-center gap-2 hover:shadow-md hover:shadow-purple-500/20"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('contacto');
@@ -297,7 +297,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>Consultá sin cargo</span>
+            <span >Consultá sin cargo</span>
             <motion.div
               animate={{ x: [0, 5, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut", delay: 2.5 }}
@@ -307,16 +307,16 @@ const Hero = ({ scrollToSection }: HeroProps) => {
           </motion.a>
           
           <motion.a 
-            href="#proyectos"
+            href="#servicios"
             className="px-6 md:px-8 py-2 md:py-3 border border-white/20 rounded-lg text-white text-sm md:text-base font-medium hover:bg-white/10 transition-all backdrop-blur-sm hover:border-white/40"
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection('proyectos');
+              scrollToSection('servicios');
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Ver proyectos
+            Nuestros Servicios
           </motion.a>
         </motion.div>
       </div>

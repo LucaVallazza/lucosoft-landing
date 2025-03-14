@@ -17,6 +17,7 @@ import {
   CustomLeftArrow,
 } from "./CarouselControls";
 import { Keyword } from "./ui/Keyword";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 // Importar estilos específicos para el OfferBurst
 import "./styles/offer-burst.css";
@@ -167,6 +168,7 @@ const ServicesSection = () => {
             <br /> ¡Te la hacemos GRATIS!
           </>
         ),
+        url: "/pagina-web-gratis",
         icon: <Gift className="w-10 h-5 text-pink-400 animate-pulse" />,
       },
     },
@@ -316,6 +318,7 @@ const ServicesSection = () => {
 
                 <p className="text-gray-300 flex-grow">{service.description}</p>
 
+                {/* Botones de acción */}
                 {service.promo && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -343,33 +346,45 @@ const ServicesSection = () => {
                   </motion.div>
                 )}
 
-                <a
-                  href={`https://wa.me/5491141406819?text=${encodeURIComponent(
-                    `Hola buenas! Queria consultar por el servicio de ${
-                      service.title
-                    }${
-                      service.title === "Landing Pages"
-                        ? promoData?.active
-                          ? " GRATIS (¡Oferta por tiempo limitado!)"
-                          : " GRATIS"
-                        : ""
-                    }`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 px-4 py-2 ${
-                    service.title === "Landing Pages" && promoData?.active
-                      ? "bg-gradient-to-r from-pink-600 to-red-600 hover:from-pink-700 hover:to-red-700"
-                      : "bg-green-600 hover:bg-green-700"
-                  } transition-colors rounded-lg text-white text-sm font-medium mt-6 self-end`}
-                >
-                  <MessageCircleMore className="w-4 h-4" />
-                  {service.title === "Landing Pages"
-                    ? promoData?.active
-                      ? "¡Quiero mi página GRATIS AHORA!"
-                      : "¡Quiero mi página GRATIS!"
-                    : "Consultar"}
-                </a>
+                <div className="flex flex-col gap-2 mt-3 w-full">
+                  {/* Agregar botón para obtenerla gratis, visible solo para el servicio de Landing Pages */}
+                  {service.promo && (
+                    <Link
+                      to={service.promo.url}
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-transparent border border-purple-500/50 hover:bg-purple-500/10 transition-colors rounded-lg text-white text-sm font-medium"
+                    >
+                      <Globe className="w-4 h-4 text-purple-400" />
+                      Más info sobre la oferta
+                    </Link>
+                  )}
+                  <a
+                    href={`https://wa.me/5491141406819?text=${encodeURIComponent(
+                      `Hola buenas! Queria consultar por el servicio de ${
+                        service.title
+                      }${
+                        service.title === "Landing Pages"
+                          ? promoData?.active
+                            ? " GRATIS (¡Oferta por tiempo limitado!)"
+                            : " GRATIS"
+                          : ""
+                      }`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex w-full  items-center justify-center gap-2 px-4 py-2 ${
+                      service.title === "Landing Pages" && promoData?.active
+                        ? "bg-gradient-to-r from-pink-600 to-red-600 hover:from-pink-700 hover:to-red-700"
+                        : "bg-green-600 hover:bg-green-700"
+                    } transition-colors rounded-lg text-white text-sm font-medium self-end flex-1`}
+                  >
+                    <MessageCircleMore className="w-4 h-4" />
+                    {service.title === "Landing Pages"
+                      ? promoData?.active
+                        ? "Consultar"
+                        : "Consultar"
+                      : "Consultar"}
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}
