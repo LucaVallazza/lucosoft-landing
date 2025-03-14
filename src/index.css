@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@layer utilities {
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+  .react-multi-carousel-list{
+    align-items: stretch !important;
+  }
+
+  .react-multiple-carousel__arrow {
+    margin-top: 10em !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Añade estos estilos al final del archivo */
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.squiggle-animation {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw 1.5s forwards;
+  animation-delay: 3s; /* Se activará después de la última palabra */
+}
+
+.squiggle-animation-alt {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw 1.5s forwards;
+  animation-delay: 3s; /* Se activará después de la última palabra */
+}
+
+.highlight-gradient {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6, #d946ef);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s linear infinite;
+  animation-delay: 3s; /* Se activará después de la última palabra */
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
