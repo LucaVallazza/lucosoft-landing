@@ -1,10 +1,45 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageCircleMore } from 'lucide-react';
+import { useEffect } from 'react';
 
 const ContactSection = () => {
+  // Este efecto se ejecuta cada vez que el componente se monta
+  // y fuerza overflow-hidden en todo el documento
+  useEffect(() => {
+    // Guardar estilos originales
+    const originalHtmlOverflow = document.documentElement.style.overflowX;
+    const originalBodyOverflow = document.body.style.overflowX;
+    
+    // Aplicar overflow-hidden inmediatamente
+    document.documentElement.style.overflowX = 'hidden';
+    document.body.style.overflowX = 'hidden';
+    
+    // Asegurarnos que permanece aplicado incluso después de la carga completa
+    const applyHiddenOverflow = () => {
+      document.documentElement.style.overflowX = 'hidden';
+      document.body.style.overflowX = 'hidden';
+    };
+    
+    // Aplicar en diferentes eventos para garantizar que funcione
+    window.addEventListener('resize', applyHiddenOverflow);
+    window.addEventListener('load', applyHiddenOverflow);
+    
+    // También aplicar después de un tiempo para asegurar que las animaciones hayan terminado
+    const timeoutId = setTimeout(applyHiddenOverflow, 1500);
+    
+    // Limpieza al desmontar el componente
+    return () => {
+      document.documentElement.style.overflowX = originalHtmlOverflow;
+      document.body.style.overflowX = originalBodyOverflow;
+      window.removeEventListener('resize', applyHiddenOverflow);
+      window.removeEventListener('load', applyHiddenOverflow);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   return (
-    <section id="contacto" className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
+    <section id="contacto" className="py-20 px-4 overflow-hidden w-full">
+      <div className="max-w-4xl mx-auto overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -15,11 +50,11 @@ const ContactSection = () => {
           <p className="text-gray-300">Estamos listos para ayudarte con tu próximo proyecto</p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
-          {/* Contact Form */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 overflow-hidden">
+          {/* Contact Form - Eliminamos la animación horizontal */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-white/10"
           >
@@ -58,7 +93,7 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-gray-300 mb-2">¿Quién te envio la pagina? <span className='italic text-sm'>(Opcional)</span></label>
+                <label htmlFor="referal" className="block text-gray-300 mb-2">¿Quién te envio la pagina? <span className='italic text-sm'>(Opcional)</span></label>
                 <input
                   type="text"
                   id="referal"
@@ -90,11 +125,11 @@ const ContactSection = () => {
             </form>
           </motion.div>
           
-          {/* Contact Info */}
+          {/* Contact Info - Eliminamos la animación horizontal */}
           <div className="flex flex-col space-y-6 md:space-y-8">
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-white/10"
             >
@@ -122,8 +157,8 @@ const ContactSection = () => {
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-white/10"
             >
