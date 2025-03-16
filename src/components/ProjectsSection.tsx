@@ -21,7 +21,7 @@ const ProjectsSection = () => {
       title: "Perez y Asociados",
       description: "Página web para un estudio jurídico donde se exponen todos sus servicios. Con un diseño elegante y minimalista.",
       image: "projects/perez-y-asociados.jpg",
-      url: "https://lucavallazza.github.io/perez-y-asociados-landing/"
+      url: "https://perez-y-asociados-landing.vercel.app/"
     }
   ];
 
