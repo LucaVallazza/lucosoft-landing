@@ -6,6 +6,12 @@ import { CustomDot, CustomRightArrow, CustomLeftArrow } from './CarouselControls
 const ProjectsSection = () => {
   const projects = [
     {
+      title: "Delirio Food",
+      description: "Página web para una hamburgueseria. Diseño urbano.",
+      image: "projects/delirio.jpg",
+      url: "https://urban-house-landing.vercel.app/"
+    },
+    {
       title: "Urban House",
       description: "Página web para una inmobiliaria con un buscador de propiedades incorporado. Diseño moderno y simple.",
       image: "projects/urban-house.jpg",
